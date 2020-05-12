@@ -10,12 +10,16 @@ public class Person {
     private String lastName;
     private int age;
 
-    public Person(String email, String firstName, String lastName, int age) {
-        this.id = ++counter;
+    public Person(int id, String email, String firstName, String lastName, int age) {
+        this.id = id;
         setEmail(email);
         setFirstName(firstName);
         setLastName(lastName);
         setAge(age);
+    }
+
+    public Person(String email, String firstName, String lastName, int age) {
+        this(++counter, email,firstName,lastName,age);
     }
 
     public int getId() {
